@@ -14,7 +14,7 @@ function __construct($username, $password){
 
 private function insertUser(){
     //we are creating an insert query to insert our user in the users table and have also prepared statement to prevent sql injection
-    $query = "INSERT INTO users ('username', 'password') VALUES (:username, :password)";
+    $query = "INSERT INTO users(`username`, `password`) VALUES (:username, :password)";
 
     $stmt = parent::connect()->prepare($query);
     $stmt->bindParam(":username", $this->username);
